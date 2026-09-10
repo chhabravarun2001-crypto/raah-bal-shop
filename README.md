@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RAAH | BAL
 
-## Getting Started
+A standalone ecommerce storefront for RAAH | BAL — bold type, a custom cursor, a preloader and
+page transitions, and a Shopify-ready catalogue. This project is fully independent: it has its
+own git history and isn't connected to any other RAAH codebase or domain.
 
-First, run the development server:
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Storefront
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+`/shop`, `/collections/[handle]` and `/products/[handle]` run on a small Shopify-ready data layer
+(`src/lib/shopify/`). Until Shopify is connected, the store runs on a built-in placeholder
+catalogue (`src/lib/shopify/mock-data.ts`) using the stock product photos in
+`public/images/products/`.
 
-## Learn More
+## Going live
 
-To learn more about Next.js, take a look at the following resources:
+Copy `.env.example` to `.env.local` and fill in:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Shopify** — `SHOPIFY_STORE_DOMAIN` + `SHOPIFY_STOREFRONT_ACCESS_TOKEN`. Once both are set, the
+  site automatically switches to real Shopify inventory and checkout — no code changes. Add,
+  price and photograph products, and manage stock, entirely from Shopify Admin.
+- **Google sign-in** — `AUTH_GOOGLE_ID`, `AUTH_GOOGLE_SECRET`, `AUTH_SECRET`. Until set, `/account`
+  shows a disabled "connecting soon" state instead of a broken sign-in button.
+- **Newsletter** (optional) — `NEWSLETTER_WEBHOOK_URL` for the footer signup form.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Cart contents live in the browser (`localStorage`) regardless of Shopify connection. "Checkout"
+sends the customer to Shopify's own hosted checkout once configured; before that, it falls back to
+an email hand-off (placeholder address in `src/lib/constants.ts` — update before launch) so no
+payment details are ever collected outside Shopify.
 
-## Deploy on Vercel
+## Deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Any Next.js host works (Vercel, etc.) — this project has no dependency on another site's hosting
+or domain.
