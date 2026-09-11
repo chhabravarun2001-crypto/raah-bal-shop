@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { gsap, prefersReducedMotion } from "@/lib/gsap";
-import { isVideoIntroDone, VIDEO_INTRO_DONE_EVENT } from "@/lib/introGate";
 
 // Bold, punch-cut manifesto lines — the same kinetic-typography energy as a
 // slammed title card, built from the brand's own words instead of borrowed
@@ -36,9 +35,6 @@ export default function Preloader() {
     let timer: ReturnType<typeof setTimeout> | undefined;
     let tl: gsap.core.Timeline | undefined;
 
-    // Starts only once the VideoIntro is out of the way — otherwise this
-    // timeline runs hidden behind the video and only its tail end ever
-    // becomes visible.
     function begin() {
       const el = document.getElementById("preloader");
       tl = gsap.timeline();
@@ -78,14 +74,9 @@ export default function Preloader() {
       }, totalMs);
     }
 
-    if (isVideoIntroDone()) {
-      begin();
-    } else {
-      window.addEventListener(VIDEO_INTRO_DONE_EVENT, begin, { once: true });
-    }
+    begin();
 
     return () => {
-      window.removeEventListener(VIDEO_INTRO_DONE_EVENT, begin);
       if (timer) clearTimeout(timer);
       tl?.kill();
     };

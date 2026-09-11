@@ -3,7 +3,6 @@ import { Space_Grotesk, Inter, Space_Mono, Fraunces } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import VideoIntro from "@/components/VideoIntro";
 import Preloader from "@/components/Preloader";
 import ScrollProgress from "@/components/ScrollProgress";
 import PageTransition from "@/components/PageTransition";
@@ -56,12 +55,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       data-scroll-behavior="smooth"
       className={`${spaceGrotesk.variable} ${inter.variable} ${spaceMono.variable} ${fraunces.variable}`}
     >
-      <head>
-        <link rel="preload" as="video" type="video/mp4" href="/videos/intro.mp4" />
-      </head>
       <body>
         <CartProvider>
-          <VideoIntro />
           <Preloader />
           <div className="grain" aria-hidden />
           <ScrollProgress />
