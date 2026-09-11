@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, ReactNode, ElementType } from "react";
+import { useRef, useEffect, ReactNode, ElementType, ComponentType } from "react";
 import { gsap, prefersReducedMotion } from "@/lib/gsap";
 
 type RevealProps = {
@@ -62,7 +62,16 @@ export default function Reveal({
     return () => ctx.revert();
   }, [variant, delay, duration, start]);
 
-  const Component = Tag as ElementType;
+  // `Tag` is a runtime-chosen element type (div/h2/etc.) — TS can't infer a
+  // single children type across every possible tag, so it collapses to
+  // `never`. Cast narrowly to a component shape that accepts what we
+  // actually pass; the ref is always forwarded to a real DOM/host element.
+  const Component = Tag as ComponentType<{
+    ref?: typeof ref;
+    id?: string;
+    className?: string;
+    children?: ReactNode;
+  }>;
 
   return (
     <Component ref={ref} id={id} className={className}>

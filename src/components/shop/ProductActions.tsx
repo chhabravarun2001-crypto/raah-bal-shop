@@ -73,7 +73,7 @@ export default function ProductActions({ product }: { product: Product }) {
           style={{ "--stamp-color": "var(--color-ember)" } as CSSProperties}
           className="btn-stamp w-full bg-ink px-6 py-4 font-mono text-xs uppercase tracking-[0.2em] text-paper"
         >
-          Add to bag — {formatPrice(product.price.amount, product.price.currencyCode)}
+          Add to bag · {formatPrice(product.price.amount, product.price.currencyCode)}
         </button>
       </Magnetic>
     </div>

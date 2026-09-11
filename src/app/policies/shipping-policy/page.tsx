@@ -3,7 +3,7 @@ import PolicyPage from "@/components/PolicyPage";
 import { ORDERS_EMAIL } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Shipping Policy — RAAH | BAL",
+  title: "Shipping Policy · RAAH | BAL",
   description: "Dispatch times, delivery windows and shipping rates for RAAH | BAL orders.",
 };
 
@@ -30,7 +30,7 @@ export default function ShippingPolicyPage() {
               <p>Metro cities: 3–5 working days after dispatch.</p>
               <p>Rest of India: 5–7 working days after dispatch.</p>
               <p>
-                International shipping isn&apos;t available yet — it&apos;s on the list for a future drop.
+                International shipping isn&apos;t available yet. It&apos;s on the list for a future drop.
               </p>
             </>
           ),
@@ -74,7 +74,7 @@ export default function ShippingPolicyPage() {
           heading: "6. Address accuracy",
           body: (
             <p>
-              Please double-check your shipping address at checkout — we can amend it before dispatch, but
+              Please double-check your shipping address at checkout. We can amend it before dispatch, but
               can&apos;t guarantee changes once a package is with the courier.
             </p>
           ),

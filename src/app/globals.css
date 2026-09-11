@@ -27,6 +27,7 @@
   --font-display: var(--font-space-grotesk);
   --font-body: var(--font-inter);
   --font-mono: var(--font-space-mono);
+  --font-serif: var(--font-fraunces);
 }
 
 @layer base {
@@ -162,6 +163,12 @@
   .duotone-img {
     transition: none;
   }
+}
+
+/* ---------- Neutral high-contrast photography (editorial mood imagery —
+   no warm/red cast, unlike .duotone-img's product-photo treatment) ---------- */
+.mono-img {
+  filter: grayscale(1) contrast(1.2) brightness(0.96);
 }
 
 /* ---------- Nav link underline draw ---------- */
@@ -345,8 +352,26 @@
   transform-origin: center;
 }
 
+/* ---------- Ambient dot-grid drift ---------- */
+@keyframes dot-drift {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: var(--dot-size, 26px) var(--dot-size, 26px);
+  }
+}
+
+.dot-drift {
+  animation: dot-drift 18s linear infinite alternate;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .spin-slow {
+    animation: none;
+  }
+
+  .dot-drift {
     animation: none;
   }
 

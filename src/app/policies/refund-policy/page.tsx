@@ -3,7 +3,7 @@ import PolicyPage from "@/components/PolicyPage";
 import { ORDERS_EMAIL } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Returns & Refunds — RAAH | BAL",
+  title: "Returns & Refunds · RAAH | BAL",
   description: "How to return or exchange a RAAH | BAL order, and how refunds are processed.",
 };
 
@@ -41,7 +41,7 @@ export default function RefundPolicyPage() {
           heading: "3. Exchanges",
           body: (
             <p>
-              Need a different size? Let us know when you request the return — we&apos;ll hold the size
+              Need a different size? Let us know when you request the return. We&apos;ll hold the size
               you need for up to 5 days while the original piece is on its way back to us.
             </p>
           ),
@@ -61,7 +61,7 @@ export default function RefundPolicyPage() {
           body: (
             <p>
               If something arrives damaged, defective or not what you ordered, tell us within 48 hours of
-              delivery with a photo — we&apos;ll replace it or refund it in full, no return shipping cost
+              delivery with a photo. We&apos;ll replace it or refund it in full, no return shipping cost
               to you.
             </p>
           ),

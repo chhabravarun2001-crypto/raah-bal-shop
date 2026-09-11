@@ -3,7 +3,7 @@ import PolicyPage from "@/components/PolicyPage";
 import { PRIVACY_EMAIL } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — RAAH | BAL",
+  title: "Privacy Policy · RAAH | BAL",
   description: "How RAAH | BAL collects, uses and protects your personal information.",
 };
 
@@ -34,7 +34,7 @@ export default function PrivacyPolicyPage() {
               </p>
               <p>
                 Order information: shipping address, phone number, items purchased and payment
-                confirmation — payment card details themselves are collected and processed directly by
+                confirmation. Payment card details themselves are collected and processed directly by
                 Shopify&apos;s payment processor, never by us.
               </p>
               <p>
@@ -48,8 +48,8 @@ export default function PrivacyPolicyPage() {
           heading: "3. How we use it",
           body: (
             <p>
-              To process and ship orders, respond to support requests, secure your account, and — only
-              with your consent (e.g. the newsletter form) — tell you about future drops. We do not sell
+              To process and ship orders, respond to support requests, secure your account, and, only
+              with your consent (e.g. the newsletter form), tell you about future drops. We do not sell
               your personal information to third parties.
             </p>
           ),

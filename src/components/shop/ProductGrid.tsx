@@ -15,7 +15,7 @@ export default function ProductGrid({
           theme === "dark" ? "text-paper/40" : "text-ink/40"
         }`}
       >
-        No pieces match those filters — yet.
+        No pieces match those filters, yet.
       </p>
     );
   }

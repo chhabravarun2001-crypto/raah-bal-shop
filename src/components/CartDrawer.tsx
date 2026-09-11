@@ -37,7 +37,7 @@ export default function CartDrawer() {
         throw new Error(data.error ?? "Checkout failed");
       }
     } catch {
-      setCheckoutError("Couldn't reach checkout — try the email order below instead.");
+      setCheckoutError("Couldn't reach checkout. Try the email order below instead.");
     } finally {
       setCheckingOut(false);
     }
@@ -163,13 +163,13 @@ function buildOrderHandoff(lines: CartLine[], subtotal: number, currencyCode: st
   const itemLines = lines
     .map(
       (l) =>
-        `${l.quantity} x ${l.title} (Size ${l.size}) — ${formatPrice(l.price.amount * l.quantity, l.price.currencyCode)}`
+        `${l.quantity} x ${l.title} (Size ${l.size}): ${formatPrice(l.price.amount * l.quantity, l.price.currencyCode)}`
     )
     .join("\n");
-  const body = `Hi RAAH | BAL — I'd like to order:\n\n${itemLines}\n\nSubtotal: ${formatPrice(
+  const body = `Hi RAAH | BAL, I'd like to order:\n\n${itemLines}\n\nSubtotal: ${formatPrice(
     subtotal,
     currencyCode
   )}`;
-  const subject = "RAAH | BAL — Order request";
+  const subject = "RAAH | BAL · Order request";
   return `mailto:${ORDERS_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }

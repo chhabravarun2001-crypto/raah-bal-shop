@@ -4,7 +4,7 @@ import ShopClient from "@/components/shop/ShopClient";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
-  title: "Shop — RAAH | BAL",
+  title: "Shop · RAAH | BAL",
   description: "The first RAAH | BAL drop. Built like a story, worn like proof.",
 };
 
@@ -26,7 +26,7 @@ export default async function ShopPage() {
           Shop the drop
         </Reveal>
         <Reveal variant="up" delay={0.1} className="mt-5 max-w-lg text-ink/60">
-          Four pieces. No shortcuts. Everything here was earned before it was sold.
+          Six pieces. No shortcuts. Everything here was earned before it was sold.
         </Reveal>
       </div>
 

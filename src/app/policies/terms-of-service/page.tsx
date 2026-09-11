@@ -3,7 +3,7 @@ import PolicyPage from "@/components/PolicyPage";
 import { SUPPORT_EMAIL } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — RAAH | BAL",
+  title: "Terms of Service · RAAH | BAL",
   description: "The terms that govern your use of the RAAH | BAL storefront and your orders.",
 };
 
@@ -28,8 +28,8 @@ export default function TermsOfServicePage() {
           body: (
             <p>
               All prices are listed in Indian Rupees (INR) and include GST unless stated otherwise. We
-              reserve the right to refuse or cancel an order — for example if a piece is mispriced, out of
-              stock, or flagged for suspected fraud — and will refund any amount already charged.
+              reserve the right to refuse or cancel an order (for example if a piece is mispriced, out of
+              stock, or flagged for suspected fraud) and will refund any amount already charged.
             </p>
           ),
         },
@@ -46,7 +46,7 @@ export default function TermsOfServicePage() {
           heading: "4. Product information",
           body: (
             <p>
-              We try to keep sizing, fabric and colour details accurate, but slight variation is normal —
+              We try to keep sizing, fabric and colour details accurate, but slight variation is normal:
               screens render colour differently and each piece is cut by hand. Refer to the size guide on
               each product page before ordering.
             </p>

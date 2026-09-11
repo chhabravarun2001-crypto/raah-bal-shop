@@ -123,7 +123,7 @@ export default function HeroReel({ slides }: { slides: ReelSlide[] }) {
       </button>
 
       <div className="pointer-events-none absolute bottom-5 right-5 font-mono text-[10px] uppercase tracking-[0.2em] text-paper/70 sm:bottom-8 sm:right-8">
-        {String(index + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")} — {active.label}
+        {String(index + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")} · {active.label}
       </div>
     </div>
   );

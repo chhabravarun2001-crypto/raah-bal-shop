@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Vendored third-party components (react-bits), kept as-authored.
+    "src/components/vendor/**",
   ]),
 ]);
 

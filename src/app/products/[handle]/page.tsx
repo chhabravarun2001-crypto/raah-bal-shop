@@ -27,7 +27,7 @@ export async function generateMetadata({
   const product = await getProductByHandle(handle);
   if (!product) return { title: "RAAH | BAL" };
   return {
-    title: `${product.title} — RAAH | BAL`,
+    title: `${product.title} · RAAH | BAL`,
     description: product.description,
   };
 }

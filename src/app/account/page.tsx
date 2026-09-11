@@ -7,7 +7,7 @@ import Reveal from "@/components/Reveal";
 import { IconGoogle } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: "Account — RAAH | BAL",
+  title: "Account · RAAH | BAL",
   description: "Sign in to RAAH | BAL to save your bag, track orders and get first access to future drops.",
 };
 
@@ -51,7 +51,7 @@ export default async function AccountPage() {
             <div className="mt-10">
               <h2 className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink/50">Orders</h2>
               <p className="mt-3 text-sm text-ink/60">
-                No orders yet — your history will show up here the moment your first piece ships.
+                No orders yet. Your history will show up here the moment your first piece ships.
               </p>
             </div>
 
@@ -89,7 +89,7 @@ export default async function AccountPage() {
                 className="flex w-full cursor-not-allowed items-center justify-center gap-3 border border-ink/15 px-6 py-4 font-mono text-xs uppercase tracking-[0.2em] text-ink/40"
               >
                 <IconGoogle className="h-4 w-4 opacity-40" />
-                Google sign-in — connecting soon
+                Google sign-in: connecting soon
               </button>
             )}
           </Reveal>
